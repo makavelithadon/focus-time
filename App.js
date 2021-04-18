@@ -1,25 +1,23 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { View, StyleSheet, Text, Platform } from "react-native";
-import { Focus } from "./src/features/focus/Focus";
-import { Timer } from "./src/features/timer/Timer";
-import { colors } from "./src/utils/colors";
-import { spacing } from "./src/utils/sizes";
-import { FocusHistory } from "./src/features/focus/FocusHistory";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import uuid from "react-native-uuid";
+import React, { useCallback, useEffect, useState } from 'react';
+import { View, StyleSheet, Text, Platform } from 'react-native';
+import { Focus } from './src/features/focus/Focus';
+import { Timer } from './src/features/timer/Timer';
+import { colors } from './src/utils/colors';
+import { spacing } from './src/utils/sizes';
+import { FocusHistory } from './src/features/focus/FocusHistory';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import uuid from 'react-native-uuid';
 
 const STATUSES = {
   COMPLETE: 1,
   CANCELLED: 2,
 };
 
-const FOCUS_HISTORY_ITEM_KEY_NAME = "focusHistory";
+const FOCUS_HISTORY_ITEM_KEY_NAME = 'focusHistory';
 
 export default function App() {
-  console.log("yolo");
   const [focusSubject, setFocusSubject] = useState(null);
-  const [focusHistory, setFocusHistory] = useState([]);
-  ("");
+  const [focusHistory, setFocusHistory] = useState([]);''
 
   const addFocusHistorySubjectWithState = useCallback(
     (subject, status) => {
@@ -77,7 +75,7 @@ export default function App() {
           }}
         />
       ) : (
-        <View style={{ flex: 1 }}>
+        <View style={{flex: 1}}>
           <Focus addSubject={setFocusSubject} />
           <FocusHistory focusHistory={focusHistory} onClear={onClear} />
         </View>
@@ -89,7 +87,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "ios" ? spacing.md : spacing.lg,
+    paddingTop: Platform.OS === 'ios' ? spacing.md : spacing.lg,
     backgroundColor: colors.darkBlue,
   },
 });
